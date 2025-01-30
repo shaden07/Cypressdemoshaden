@@ -22,4 +22,12 @@
 //
 //
 // -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('LoginSausdemo', (Username,password) => { 
+    cy.visit('/')
+    cy.get('#user-name').type(Username)
+    cy.get('#password').type(password)
+    cy.get('#login-button').click()
+
+ })
+
+           

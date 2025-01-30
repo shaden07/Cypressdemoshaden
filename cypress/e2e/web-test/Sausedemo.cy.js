@@ -1,10 +1,7 @@
 describe('template spec', () => {
-    it('Login Sucsess', () => {
+    it.only('Login Sucsess', () => {
         cy.visit('https://www.saucedemo.com/')
-        cy.get('#ui-id-5').click()
-        cy.get('#user-name').type('standard_user')
-        cy.get('#password').type('secret_sauce')
-        cy.get('#login-button').click()
+        cy.LoginSausdemo('standart_user','secret_sauce' )
         cy.get('[data-test="Eror"]').should('have.text', 'tulisane')         
     })
     it('Login Failed - empty username', () => {
